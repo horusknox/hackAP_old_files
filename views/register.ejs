@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST" >
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            
+            <div class="form-group">
+              <label for="data">date of joining</label>
+              <input type="text" class="form-control" name="dateofjoin">
+
+
+
+
+              
+            <div class="form-group">
+              <label for="data">Role</label>
+              <input type="text" class="form-control" name="role">
+              
+
+
+              <div class="form-group">
+                <label for="data">pay</label>
+                <input type="text" class="form-control" name="pay">
+             
+             
+                <div class="form-group" style="margin-bottom:5rem">
+                    <label for="data">Sector of work</label>
+                    <input type="text" class="form-control" name="sec">
+                      </div>
+                  
+
+              
+              <button type="submit" class="btn btn-dark">Register</button>
+            </div>
+          </form>
+          
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/header') %>

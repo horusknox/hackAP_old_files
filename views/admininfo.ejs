@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<%var d=docs.length%>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">UID</th>
+        <th scope="col">Date-ofJoin</th>
+        <th scope="col">Sector of work</th>
+        <th scope="col">Role</th>
+        <th scope="col">Pay</th>
+        <th scope="col">Date-Of-Resignation</th>
+        <th scope="col">Update DOR</th>
+        <th scope="col">No.of projects</th>
+        <th scope="col">Update No.of Pro.</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+<% for(var i=0; i!=d ; i++) {%>
+    <tr>
+        <td><%=docs[i]._id%></td>
+        <td><%=docs[i].doj%></td>
+        <td><%=docs[i].sec%></td>
+        <td><%=docs[i].role%></td>
+        <td><%=docs[i].pay%></td>
+        <td><%=docs[i].dor%></td>
+       
+        <td><form action="/update" method="POST">
+          <input type="text" name="udor"></input>
+          <input style="height: 0;width: 0;border: 0;padding: 0" type="text" name="id" value=<%=docs[i]._id%>></input>
+          <button type="submit" class="btn btn-dark">update</button>
+        </form></td>
+
+        <td><%=docs[i].nop%></td>
+
+        <td><form action="/updatenop" method="POST">
+          <input type="text" name="nop"></input>
+          <input style="height: 0;width: 0;border: 0;padding: 0" type="text" name="id" value=<%=docs[i]._id%>></input>
+          <button type="submit" class="btn btn-dark">update</button>
+        </form></td>
+      </tr>
+
+<%}%>
+    </tbody>
+
+
+
+<br>
+<center><a class="btn btn-dark btn-lg" href="/" >Back to Home</a></center>
+
+<%- include('partials/footer') %>
